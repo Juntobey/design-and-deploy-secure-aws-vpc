@@ -28,7 +28,7 @@ This project demonstrates the ability to:
 
 The following diagram illustrates the overall architecture, including the custom VPC, public and private subnets, Internet Gateway, NAT Gateway, route tables, Security Groups, Network ACLs, Bastion Host, and routing paths.
 
-![Architecture Diagram](AWS-Secure-VPC-Infrastructure-Screenshots/design-and-deploy-secure-aws-vpc.jpg)
+![Architecture Diagram](AWS-Secure-VPC-Infrastructure-Screenshots/vpc_architecture_diagram.drawio.png)
 
 ---
 
