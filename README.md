@@ -1,4 +1,6 @@
-#  Design and Deploy a Secure AWS VPC Infrastructure by Tobey Ndlovu
+#  Design and Deploy a Secure AWS VPC Infrastructure
+
+> **Author:** Tobey Ndlovu
 
 ##  Project Overview
 
@@ -163,15 +165,37 @@ A Private EC2 instance was deployed within the private subnet to host internal a
 
 ---
 
-# 🔍 Connectivity Verification Theory
+
+# 🔍 Connectivity Verification
+
+The following screenshots verify that the deployed infrastructure functions as designed. The Bastion Host is publicly accessible through the Internet Gateway, while the private EC2 instance remains isolated and is only accessible through the Bastion Host.
+
+---
+
+## Public EC2 (Bastion Host) Connectivity
+
+The Bastion Host successfully communicates with the internet through the Internet Gateway, allowing administrators to securely connect using SSH and perform system administration tasks.
+
+![Public EC2 Connectivity](AWS-Secure-VPC-Infrastructure-Screenshots/public-ec2-connectivity.png)
+
+
+---
+
+## Private EC2 Connectivity
+
+The private EC2 instance is deployed without a public IPv4 address. Administrative access is established securely through the Bastion Host, while outbound internet connectivity is provided through the NAT Gateway for software updates and package installations.
+
+![Private EC2 Connectivity](AWS-Secure-VPC-Infrastructure-Screenshots/Private-EC2-running.png)
+
+---
 
 ## Internet Access for the Private EC2 Instance
 
-The private EC2 instance does not have a public IP address and therefore cannot communicate directly with the Internet Gateway.
+The private EC2 instance cannot communicate directly with the Internet Gateway because it resides within the private subnet and has no public IP address.
 
 Instead, outbound traffic follows this path:
 
-```
+```text
 Private EC2
       │
       ▼
@@ -187,12 +211,12 @@ Internet Gateway
 Internet
 ```
 
-This allows the private EC2 instance to:
+This enables the private EC2 instance to:
 
 - Download operating system updates
 - Install software packages
 - Access external repositories
-- Maintain security patches
+- Receive security patches
 
 without exposing the instance to inbound internet traffic.
 
@@ -200,9 +224,9 @@ without exposing the instance to inbound internet traffic.
 
 ## Secure Administrative Access
 
-Administrative access to the private EC2 instance is achieved through the Bastion Host.
+Administrative access to the private EC2 instance is achieved securely through the Bastion Host.
 
-```
+```text
 Administrator
       │
       ▼
@@ -214,7 +238,7 @@ Internet Gateway
       ▼
 Bastion Host
       │
- SSH Agent Forwarding
+SSH Agent Forwarding
       │
       ▼
 Private EC2
@@ -223,6 +247,7 @@ Private EC2
 This architecture ensures that the private instance remains inaccessible from the public internet while still allowing secure administration.
 
 ---
+
 
 ## Why External Users Cannot Access the Private Instance
 
