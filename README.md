@@ -88,7 +88,7 @@ A dedicated public route table was configured with a default route (**0.0.0.0/0*
 
 A custom Network ACL was configured to provide subnet-level traffic filtering for the public subnet while allowing HTTP, HTTPS, SSH, and required ephemeral ports.
 
-![Public Network ACL](AWS-Secure-VPC-Infrastructure-Screenshots/configured-public-network-acl.png)
+![Public Network ACL](AWS-Secure-VPC-Infrastructure-Screenshots/configured-public-network-nacl.png)
 
 ---
 
@@ -104,7 +104,7 @@ A Security Group was configured for the Bastion Host, allowing inbound SSH acces
 
 A Bastion Host was deployed within the public subnet to provide secure administrative access to resources hosted in the private subnet.
 
-![Bastion Host](AWS-Secure-VPC-Infrastructure-Screenshots/instance-configuration(Bastion-host).png)
+![Bastion Host](AWS-Secure-VPC-Infrastructure-Screenshots/instance-configuration-(Bastion-host).png)
 
 ---
 
