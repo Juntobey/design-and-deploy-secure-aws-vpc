@@ -154,6 +154,12 @@ A Security Group was configured to allow SSH access only from the Bastion Host S
 
 ![Private Security Group](AWS-Secure-VPC-Infrastructure-Screenshots/configured-private-ec2-ecurity-group.png)
 
+## 14. Private EC2 instance 
+
+A Private EC2 instance was deployed within the private subnet to host internal applicationa resources. The private EC2 instance does not have public IP address, ensuring it can not be accessed directly from the public internet. Access to the private EC2 instance is restricted to the Bastion Host through SSH, following the principle of least privilege. This configuration provides secure administrative access while maintaining netowrk isolation. 
+
+![Bastion Host](AWS-Secure-VPC-Infrastructure-Screenshots/instance-configuration-private-ec2.png)
+
 
 ---
 
